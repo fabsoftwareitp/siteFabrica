@@ -3,5 +3,5 @@
 <p>nome: <?=$projeto['nome']?></p>
 <p>email: <?=$projeto['link']?></p>
 <p>descricao: <?=$projeto['descricao']?></p>
-<p>ano de atuação: <?=$projeto['ano']?></p>
+<p>Data de inicio da produção: <?=$projeto['dataInicio']?></p>
 <img src="<?=$projeto['logo']?>" alt="<?=$projeto['fotoPerfil']?>">

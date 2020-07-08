@@ -17,9 +17,9 @@ function adicionar() {
         $senha = $_POST["senha"];
         $descricao = $_POST["descricao"];
         $fotoPerfil = $_FILES["fotoPerfil"];
-        $ano = $_POST["ano"];
+        $statusMembro = $_POST["statusMembro"];
         $diretorio_da_imagem = uploadImagem($fotoPerfil);
-        alert(adicionarUsuario($nome, $email, $senha, $descricao, $diretorio_da_imagem, $ano));
+        alert(adicionarUsuario($nome, $email, $senha, $descricao, $diretorio_da_imagem, $statusMembro));
         redirecionar("usuario");
     } else {
         exibir("usuario/formulario");
@@ -40,8 +40,8 @@ function editar($idMembro) {
         $senha = $_POST["senha"];
         $descricao = $_POST["descricao"];
         $fotoPerfil = $_POST["fotoPerfil"];
-        $ano = $_POST["ano"];
-        alert(editarUsuario($idMembro, $nome, $email, $senha, $descricao, $fotoPerfil, $ano));
+        $statusMembro = $_POST["statusMembro"];
+        alert(editarUsuario($idMembro, $nome, $email, $senha, $descricao, $fotoPerfil, $statusMembro));
         redirecionar("usuario/index");
     } else {
         $dados["usuario"] = pegarUsuarioPorId($idMembro);

@@ -16,9 +16,9 @@ function adicionar() {
         $link = $_POST["link"];
         $descricao = $_POST["descricao"];
         $logo = $_FILES["logo"];
-        $ano = $_POST["ano"];
+        $dataInicio = $_POST["dataInicio"];
         $diretorio_da_imagem = uploadImagem($logo);
-        alert(adicionarprojeto($nome, $link, $descricao, $diretorio_da_imagem, $ano));
+        alert(adicionarprojeto($nome, $link, $descricao, $diretorio_da_imagem, $dataInicio));
         redirecionar("projeto");
     } else {
         exibir("projeto/formulario");
@@ -38,8 +38,8 @@ function editar($idProjeto) {
         $link = $_POST["link"];
         $descricao = $_POST["descricao"];
         $logo = $_POST["logo"];
-        $ano = $_POST["ano"];
-        alert(editarprojeto($idProjeto, $nome, $link, $descricao, $logo, $ano));
+        $dataInicio = $_POST["dataInicio"];
+        alert(editarprojeto($idProjeto, $nome, $link, $descricao, $logo, $dataInicio));
         redirecionar("projeto/index");
     } else {
         $dados["projeto"] = pegarprojetoPorId($idProjeto);

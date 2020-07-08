@@ -22,20 +22,20 @@ function pegarprojetoPorId($id) {
 }
 
 //Create
-function adicionarprojeto($nome, $link, $descricao, $logo, $ano) {
+function adicionarprojeto($nome, $link, $descricao, $logo, $dataInicio) {
     //dd($logo);
     $cnx = conn();
-    $sql = "INSERT INTO projetos(nome, link, descricao, logo, ano) 
-            VALUES ('$nome', '$link', '$descricao', '$logo', '$ano')";
+    $sql = "INSERT INTO projetos(nome, link, descricao, logo, dataInicio) 
+            VALUES ('$nome', '$link', '$descricao', '$logo', '$dataInicio')";
     $resultado = $cnx->query($sql);
     if(!$resultado) { die('Erro ao cadastrar usuário'); }
     return 'projeto cadastrado com sucesso!';
 }
 
 //Update
-function editarprojeto($id, $nome, $link, $descricao, $logo, $ano) {
+function editarprojeto($id, $nome, $link, $descricao, $logo, $dataInicio) {
     $cnx = conn();
-    $sql = "UPDATE projetos SET nome = '$nome', link = '$link', 'descricao' = '$descricao', 'logo' = '$logo', 'ano' = '$ano' WHERE idProjeto = $id";
+    $sql = "UPDATE projetos SET nome = '$nome', link = '$link', 'descricao' = '$descricao', 'logo' = '$logo', 'dataInicio' = '$dataInicio' WHERE idProjeto = $id";
     $resultado = $cnx->query($sql);
     if(!$resultado) { die('Erro ao alterar usuário'); }
     return 'Usuário alterado com sucesso!';

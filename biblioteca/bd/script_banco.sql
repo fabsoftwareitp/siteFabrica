@@ -5,7 +5,7 @@ CREATE TABLE membros(
   senha VARCHAR(100) NOT NULL,
   descricao VARCHAR(250) NOT NULL,
   fotoPerfil VARCHAR(100) NULL,
-  ano VARCHAR(100) NOT NULL,
+  statusMembro VARCHAR(100) NOT NULL,
   --papéis: 'user' e 'admin'
   papel VARCHAR(100) NOT NULL DEFAULT 'user'
 );
@@ -16,7 +16,7 @@ CREATE TABLE projetos(
   link VARCHAR(100) NOT NULL,
   descricao VARCHAR(250) NOT NULL,
   logo VARCHAR(100) NOT NULL,
-  ano VARCHAR(100) NOT NULL
+  dataInicio DATE NOT NULL
 );
 
 CREATE TABLE membrosDosProjetos(

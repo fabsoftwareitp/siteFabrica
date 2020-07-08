@@ -3,5 +3,5 @@
 <p>nome: <?=$usuario['nome']?></p>
 <p>email: <?=$usuario['email']?></p>
 <p>descricao: <?=$usuario['descricao']?></p>
-<p>ano de atuação: <?=$usuario['ano']?></p>
+<p>status Membro: <?=$usuario['statusMembro']?></p>
 <img src="<?=$usuario['fotoPerfil']?>" alt="<?=$usuario['fotoPerfil']?>">
