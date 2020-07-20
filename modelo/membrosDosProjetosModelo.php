@@ -3,7 +3,7 @@
 require_once "modelo/usuarioModelo.php";
 
 //Read
-function pegarTodosprojetos() {
+function pegarTodosMembrosDosProjetos() {
     $cnx = conn();
     $sql = "SELECT * FROM membrosDosProjetos";
     $resultado = $cnx->query($sql);
@@ -12,6 +12,28 @@ function pegarTodosprojetos() {
         $projetos[] = $col;
     }
     return $projetos;
+}
+
+function checarMembrosDoProjeto($idMembro, $idProjeto) {
+    $cnx = conn();
+    $sql = "SELECT * FROM membrosDosProjetos WHERE idProjeto = '$idProjeto' AND idMembro = '$idMembro' ";
+    $resultado = $cnx->query($sql);
+    $MembrosDosProjetos = array();
+    foreach($resultado as $col){
+        $MembrosDosProjetos[] = $col;
+    }
+    return $MembrosDosProjetos;
+}
+
+function pegarMembrosDoProjeto($idProjeto) {
+    $cnx = conn();
+    $sql = "SELECT * FROM membros INNER JOIN membrosDosProjetos ON membros.idMembro = membrosDosProjetos.idMembro WHERE membrosDosProjetos.idProjeto = '$idProjeto' ";
+    $resultado = $cnx->query($sql);
+    $MembrosDosProjetos = array();
+    foreach($resultado as $col){
+        $MembrosDosProjetos[] = $col;
+    }
+    return $MembrosDosProjetos;
 }
 
 //Create
@@ -26,7 +48,7 @@ function adicionarMembrosDosProjetos($idMembro, $idProjeto) {
 }
 
 //Update
-function editarprojeto($idMembro, $idProjeto) {
+function editarMembrosDosProjetos($idMembro, $idProjeto) {
     $cnx = conn();
     $sql = "UPDATE projetos SET idMembro = '$idMembro', idProjeto = '$idProjeto'";
     $resultado = $cnx->query($sql);
@@ -35,7 +57,7 @@ function editarprojeto($idMembro, $idProjeto) {
 }
 
 //delete
-function deletarprojeto($idUsuarioProjeto) {
+function deletarMembrosDosProjetos($idUsuarioProjeto) {
     $cnx = conn();
     $sql = "DELETE FROM projetos WHERE idUsuarioProjeto = $idUsuarioProjeto";
     $resultado = $cnx->query($sql);

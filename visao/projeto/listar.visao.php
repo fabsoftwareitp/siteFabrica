@@ -9,6 +9,7 @@
             <th>VIEW</th>
             <th>EDIT</th>
             <th>DELETE</th>
+            <th>SELECIONAR MEMBROS</th>
         </tr>
     </thead>
     <?php foreach ($projetos as $projeto): ?>
@@ -19,6 +20,7 @@
         <td><a href="./projeto/visualizar/<?=$projeto['idProjeto']?>" class="btn btn-secondary">view</a></td>
         <td><a href="./projeto/editar/<?=$projeto['idProjeto']?>" class="btn btn-info">edit</a></td>
         <td><a href="./projeto/deletar/<?=$projeto['idProjeto']?>" class="btn btn-danger">del</a></td>
+        <td><a href="./membrosDosProjetos/adicionar/<?=$projeto['idProjeto']?>" class="btn btn-danger">selecionar membros</a></td>
     </tr>
     <?php endforeach; ?>
 </table>

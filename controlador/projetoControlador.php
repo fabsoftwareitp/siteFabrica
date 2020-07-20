@@ -1,6 +1,7 @@
 <?php
 
 require_once "modelo/projetoModelo.php";
+require_once "modelo/membrosDosProjetosModelo.php";
 require_once "servico/uploadServico.php";
 
 /** user, admin */
@@ -49,6 +50,7 @@ function editar($idProjeto) {
 
 /** user, admin */
 function visualizar($idProjeto) {
+    $dados["pegarMembrosDoProjetos"] = pegarMembrosDoProjeto($idProjeto);
     $dados["projeto"] = pegarprojetoPorId($idProjeto);
     exibir("projeto/visualizar", $dados);
 }

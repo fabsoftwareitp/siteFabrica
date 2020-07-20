@@ -5,7 +5,7 @@ require_once "servico/uploadServico.php";
 
 /** user, admin */
 function index() {
-    $dados["usuarios"] = pegarTodosUsuarios();
+    $dados["membros"] = pegarTodosUsuarios();
     exibir("usuario/listar", $dados);
 }
 
@@ -44,13 +44,13 @@ function editar($idMembro) {
         alert(editarUsuario($idMembro, $nome, $email, $senha, $descricao, $fotoPerfil, $statusMembro));
         redirecionar("usuario/index");
     } else {
-        $dados["usuario"] = pegarUsuarioPorId($idMembro);
+        $dados["membro"] = pegarUsuarioPorId($idMembro);
         exibir("usuario/formulario", $dados);
     }
 }
 
 /** user, admin */
 function visualizar($idMembro) {
-    $dados["usuario"] = pegarUsuarioPorId($idMembro);
+    $dados["membro"] = pegarUsuarioPorId($idMembro);
     exibir("usuario/visualizar", $dados);
 }

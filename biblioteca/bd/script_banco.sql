@@ -20,7 +20,7 @@ CREATE TABLE projetos(
 );
 
 CREATE TABLE membrosDosProjetos(
-  idUsuarioProjeto INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  idMembroProjeto INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
   idMembro INT NOT NULL,
   idProjeto INT NOT NULL,
   FOREIGN KEY(idMembro) REFERENCES membros(idMembro),

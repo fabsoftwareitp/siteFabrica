@@ -11,17 +11,17 @@
             <th>DELETE</th>
         </tr>
     </thead>
-    <?php foreach ($usuarios as $usuario): ?>
+    <?php foreach ($membros as $membro): ?>
     <tr>
-        <td><?=$usuario['idMembro']?></td>
-        <td><?=$usuario['nome']?></td>
-        <td><?=$usuario['email']?></td>
-        <td><a href="./usuario/visualizar/<?=$usuario['idMembro']?>" class="btn btn-secondary">view</a></td>
-        <td><a href="./usuario/editar/<?=$usuario['idMembro']?>" class="btn btn-info">edit</a></td>
-        <td><a href="./usuario/deletar/<?=$usuario['idMembro']?>" class="btn btn-danger">del</a></td>
+        <td><?=$membro['idMembro']?></td>
+        <td><?=$membro['nome']?></td>
+        <td><?=$membro['email']?></td>
+        <td><a href="./usuario/visualizar/<?=$membro['idMembro']?>" class="btn btn-secondary">view</a></td>
+        <td><a href="./usuario/editar/<?=$membro['idMembro']?>" class="btn btn-info">edit</a></td>
+        <td><a href="./usuario/deletar/<?=$membro['idMembro']?>" class="btn btn-danger">del</a></td>
     </tr>
     <?php endforeach; ?>
 </table>
 
-<a href="./usuario/adicionar" class="btn btn-primary">Adicionar novo usuario</a>
+<a href="./usuario/adicionar" class="btn btn-primary">Adicionar novo membro</a>
 
