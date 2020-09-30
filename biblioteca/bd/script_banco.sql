@@ -19,6 +19,14 @@ CREATE TABLE projetos(
   dataInicio DATE NOT NULL
 );
 
+CREATE TABLE posts(
+  idPosts INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  imagem VARCHAR(100) NOT NULL,
+  titulo VARCHAR(100) NOT NULL,
+  descricao VARCHAR(250) NOT NULL,
+  dataCriacao DATE NOT NULL
+);
+
 CREATE TABLE membrosDosProjetos(
   idMembroProjeto INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
   idMembro INT NOT NULL,
@@ -33,7 +41,7 @@ CREATE TABLE galeria(
   ano VARCHAR(100) NOT NULL
 );
 
-INSERT INTO membros(nome, email, senha, papel, descricao, ano) 
+INSERT INTO membros(nome, email, senha, papel, descricao, statusMembro) 
 VALUES
-("admin","admin@admin.com", "123", "admin", "admin do sistema", "2020"),
-("usuario","usuario@usuario.com", "123", "user", "user padrao sistema", "2020");
+("admin","admin@admin.com", "123", "admin", "admin do sistema", "ativo"),
+("usuario","usuario@usuario.com", "123", "user", "user padrao sistema", "desativado");

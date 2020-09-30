@@ -5,6 +5,7 @@
     <li><a href="usuario">Usuarios</a></li>
     <li><a href="projeto">Projetos</a></li>
     <li><a href="galeria">Galeria</a></li>
+    <li><a href="posts">Posts</a></li>
     <li><a href="paginas/sobre">Sobre</a></li>
     <?php if (isset($_SESSION["acesso"])) :?>
 			<li><a href="login/logout">Desconectar</a></li>

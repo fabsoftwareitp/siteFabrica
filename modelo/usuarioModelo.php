@@ -35,6 +35,7 @@ function pegarUsuarioPorEmailSenha($email, $senha) {
     $cnx = conn();
     $sql = "SELECT * FROM membros WHERE email = '$email' AND senha = '$senha'";
     $resultado = $cnx->query($sql);
+    //dd($resultado);
     foreach($resultado as $col){
         $usuario = $col;
     }
