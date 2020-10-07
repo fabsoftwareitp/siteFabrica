@@ -9,7 +9,7 @@ function index() {
         $usuario = pegarUsuarioPorEmailSenha($email, $senha);
         //dd($usuario);
         if (acessoLogar($usuario)) {
-            alert("bem vindo" . $login);
+            alert("bem vindo" . $usuario["email"]);
             redirecionar("paginas/");
         } else {
             alert("usuario ou senha invalidos!");
