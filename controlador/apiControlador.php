@@ -28,6 +28,15 @@ function posts() {
 }
 
 /** anon */
+function ultimosPosts() {
+    $posts = pegarUltimosPosts();
+    foreach ($posts as $key => $post){
+        $posts[$key]["imagem"] = URL_BASE.$posts[$key]["imagem"];
+    }
+    json($posts);
+}
+
+/** anon */
 function usuarios() {
     $dados["usuarios"] = pegarTodosUsuarios();
     json($dados);

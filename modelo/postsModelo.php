@@ -10,6 +10,16 @@ function pegarTodosPosts() {
     return $posts;
 }
 
+function pegarUltimosPosts() {
+    $cnx = conn();
+    $sql = "SELECT * FROM posts ORDER BY dataCriacao DESC LIMIT 2";
+    $resultado = $cnx->query($sql, PDO::FETCH_ASSOC);
+    foreach($resultado as $col){
+        $posts[] = $col;
+    }
+    return $posts;
+}
+
 function pegarPostPorId($id) {
     $cnx = conn();
     $sql = "SELECT * FROM posts WHERE idPosts = '$id'";
