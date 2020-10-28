@@ -24,7 +24,8 @@ function posts() {
     foreach ($posts as $key => $post){
         $posts[$key]["imagem"] = URL_BASE.$posts[$key]["imagem"];
     }
-    json($posts);
+    $dados["posts"] = $posts;
+    json($dados);
 }
 
 /** anon */
@@ -33,7 +34,8 @@ function ultimosPosts() {
     foreach ($posts as $key => $post){
         $posts[$key]["imagem"] = URL_BASE.$posts[$key]["imagem"];
     }
-    json($posts);
+    $dados["posts"] = $posts;
+    json($dados);
 }
 
 /** anon */
@@ -54,5 +56,6 @@ function galeria() {
     foreach ($galeria as $key => $imagem){
         $galeria[$key]["imagem"] = URL_BASE.$galeria[$key]["imagem"];
     }
-    json($galeria);
+    $dados["galeria"] = $galeria;
+    json($dados);
 }
