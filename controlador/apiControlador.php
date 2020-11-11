@@ -14,7 +14,12 @@ function json($data) {
 
 /** anon */
 function projetos() {
-    $dados["projetos"] = pegarTodosprojetos();
+    $projetos = pegarTodosprojetos();
+
+    foreach ($projetos as $key => $post){
+        $projetos[$key]["logo"] = URL_BASE.$projetos[$key]["logo"];
+    }
+    $dados["projetos"] = $projetos;
     json($dados);
 }
 
@@ -40,7 +45,11 @@ function ultimosPosts() {
 
 /** anon */
 function usuarios() {
-    $dados["usuarios"] = pegarTodosUsuarios();
+    $usuarios = pegarTodosUsuarios();
+    foreach ($usuarios as $key => $post){
+        $usuarios[$key]["fotoPerfil"] = URL_BASE.$usuarios[$key]["fotoPerfil"];
+    }
+    $dados["usuarios"] = $usuarios;
     json($dados);
 }
 

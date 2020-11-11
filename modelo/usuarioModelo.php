@@ -3,7 +3,7 @@
 function pegarTodosUsuarios() {
     $cnx = conn();
     $sql = "SELECT * FROM membros";
-    $resultado = $cnx->query($sql);
+    $resultado = $cnx->query($sql, PDO::FETCH_ASSOC);
     $usuarios = array();
     foreach($resultado as $col){
         $usuarios[] = $col;

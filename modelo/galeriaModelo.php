@@ -3,7 +3,7 @@
 function pegarTodosImagem() {
     $cnx = conn();
     $sql = "SELECT * FROM galeria";
-    $resultado = $cnx->query($sql);
+    $resultado = $cnx->query($sql, PDO::FETCH_ASSOC);
     $galeria = array();
     foreach($resultado as $col){
         $galeria[] = $col;

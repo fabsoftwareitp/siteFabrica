@@ -3,7 +3,7 @@
 function pegarTodosprojetos() {
     $cnx = conn();
     $sql = "SELECT * FROM projetos";
-    $resultado = $cnx->query($sql);
+    $resultado = $cnx->query($sql, PDO::FETCH_ASSOC);
     $projetos = array();
     foreach($resultado as $col){
         $projetos[] = $col;
