@@ -24,11 +24,12 @@ function pegarUsuarioPorId($id) {
 function pegarUsuarioPorStatus($statusMembro) {
     $cnx = conn();
     $sql = "SELECT * FROM membros WHERE statusMembro = '$statusMembro'";
-    $resultado = $cnx->query($sql);
+    $resultado = $cnx->query($sql, PDO::FETCH_ASSOC);
+    $usuarios = array();
     foreach($resultado as $col){
-        $usuario = $col;
+        $usuarios[] = $col;
     }
-    return $usuario;
+    return $usuarios;    
 }
 
 function pegarUsuarioPorEmailSenha($email, $senha) {

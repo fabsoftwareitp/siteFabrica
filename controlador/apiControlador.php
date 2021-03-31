@@ -54,6 +54,16 @@ function usuarios() {
 }
 
 /** anon */
+function usuariosPorStatus($statusMembro) {
+    $usuarios = pegarUsuarioPorStatus($statusMembro);
+    foreach ($usuarios as $key => $post){
+        $usuarios[$key]["fotoPerfil"] = URL_BASE.$usuarios[$key]["fotoPerfil"];
+    }
+    $dados["usuarios"] = $usuarios;
+    json($dados);
+}
+
+/** anon */
 function membrosDosProjetos() {
     $dados["membrosDosProjetos"] = pegarTodosMembrosDosProjetos();
     json($dados);
