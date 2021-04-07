@@ -39,7 +39,7 @@ function editar($idMembro) {
         $email = $_POST["email"];
         $senha = $_POST["senha"];
         $descricao = $_POST["descricao"];
-        $fotoPerfil = $_POST["fotoPerfil"];
+        $fotoPerfil = $_FILES["fotoPerfil"];
         $statusMembro = $_POST["statusMembro"];
         alert(editarUsuario($idMembro, $nome, $email, $senha, $descricao, $fotoPerfil, $statusMembro));
         redirecionar("usuario/index");
